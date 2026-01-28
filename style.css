@@ -18,6 +18,7 @@ background:rgb(255, 193, 204);
 height:auto;
 width: auto;
 display: flex;
+flex-direction: row;
 justify-content: space-between;
 align-items: center;
 padding: 10px;
@@ -33,7 +34,7 @@ header button {
 border: 1px black solid;
 border-radius: 5px;
 padding: 10px 20px;
-background-color:rgb(255, 142, 180);
+background-color:white;
 transition: transform 0.5s;
 cursor: pointer;
 }
@@ -56,10 +57,11 @@ border: 1px black solid;
 overflow: hidden;
 border-radius: 8px;
 width: 100%;
-  max-width: 300px;
+max-width: 300px;
 text-align: center;
 padding: 20px;
 transition: transform 0.3s;
+background-color: white;
 }
 .card:hover{
 transform: translateY(-10px);
@@ -80,7 +82,7 @@ font-family: "roboto";
 border: 1px black solid;
 border-radius: 5px;
 padding: 10px 20px;
-background-color:rgb(255, 142, 180);
+background-color:white;
 transition: transform 0.5s;
 cursor: pointer;
 }
@@ -101,21 +103,6 @@ width: 250px; /* Smaller cards for medium screens */
 .button {
 padding: 8px 18px; /* Adjust button size */
 }
-}
-
-@media (max-width: 480px) {
-.card {
-width: 100%; /* Full-width cards for small screens */
-}
-
-.button {
-width: 100%; /* Full-width button for small screens */
-padding: 12px 0;
-}
-}
-
-/* Responsive adjustments for header */
-@media (max-width: 768px) {
 header {
 flex-direction: column; /* Stack the elements vertically on smaller screens */
 align-items: flex-start; /* Align items to the start of the container */
@@ -132,32 +119,65 @@ margin-top: 10px; /* Add some space above the button on smaller screens */
 
 }
 
+/* Large screens (desktops & big monitors) */
+@media (min-width: 1200px) {
+  .card {
+    max-width: 320px;
+  }
+}
+
+/* Laptops & small desktops */
+@media (max-width: 1199px) {
+  .card {
+    max-width: 300px;
+  }
+}
+
+/* Tablets (portrait & landscape) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  header h1 {
+    margin-right: 0;
+  }
+
+  .card {
+    flex: 1 1 250px;
+  }
+}
+
+/* Mobile phones */
 @media (max-width: 480px) {
-header h1 {
-font-size: 1.5rem; /* Make the font size smaller for very small screens */
-text-align: center; /* Center-align the title on small screens */
-}
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-header button {
-width: 100%; /* Make button full-width on smaller screens */
-padding: 12px 0; /* Make the button taller */
-}
-
-
-}
-@media (max-width: 480px) {
-  .card-container {
-    padding: 10px;
+  header button {
     width: 100%;
+    text-align: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card button {
+    width: 100%;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 1.4rem;
   }
 
   .card p {
     font-size: 1rem;
   }
-
-  .card button {
-    padding: 8px 16px;
-    width: 100%;
-  }
 }
-

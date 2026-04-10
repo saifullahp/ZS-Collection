@@ -11,10 +11,10 @@ margin: 0;
 display: flex;
 flex-direction: column; /* Stack content vertically */
 min-height: 100vh;
-background-color: #fff0f5;
+background-color: #fffafc;
 }
 header{
-background:rgb(255, 193, 204);
+background:pink;
 height:auto;
 width: auto;
 display: flex;
@@ -23,6 +23,7 @@ justify-content: space-between;
 align-items: center;
 padding: 10px;
 z-index: 1000;
+border-bottom: 1px black solid;
 }
 header h1{
 font-style: italic;
@@ -82,7 +83,7 @@ font-family: "roboto";
 border: 1px black solid;
 border-radius: 5px;
 padding: 10px 20px;
-background-color:white;
+background-color:pink;
 transition: transform 0.5s;
 cursor: pointer;
 }
@@ -93,7 +94,12 @@ transform: translateY(-10px);
 color: black;
 text-decoration: none;
 }
-
+footer{
+  border-top: 3px black solid;
+  border-bottom: 1px black solid;
+  text-align:  center;
+  font-style: italic;
+}
 /* Responsive styling */
 @media (max-width: 768px) {
 .card {
